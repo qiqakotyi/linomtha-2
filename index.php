@@ -1,3 +1,6 @@
+<?php
+  include("auth.php"); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,37 +26,13 @@
 
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">LINOMTA</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Items</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+    <?php include 'nav.php' ?>
     <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
         <div class="row">
@@ -79,8 +58,13 @@
             <h2 class="section-heading text-white">INCREASE YOUR SUPPLIER VISIBILITY TODAY!</h2>
             <hr class="light my-4">
             <p class="text-faded mb-4">Join the leading hiring services marketplace,and realize an average increase in rental sales.</p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Join</a>
-			<a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Login</a>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Book Now</a>
+            <?php if(!isset($_SESSION["username"])) {  ?>
+		        <a class="btn btn-light btn-xl js-scroll-trigger" href="login.php">Login</a>
+            <?php } else {?>
+              <a class="btn btn-light btn-xl js-scroll-trigger" href="view.php">Profile</a>
+              <a class="btn btn-light btn-xl js-scroll-trigger" href="logout.php">Logout</a>
+            <?php } ?>
           </div>
         </div>
       </div>

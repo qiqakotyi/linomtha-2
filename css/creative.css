@@ -131,6 +131,10 @@ img::-moz-selection {
   }
   #mainNav .navbar-brand {
     color: rgba(255, 255, 255, 0.7);
+    width: 120px;
+  }
+  #mainNav .navbar-brand img {
+    max-width: 100%;
   }
   #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
     color: #fff;
