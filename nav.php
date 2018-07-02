@@ -1,4 +1,4 @@
-<?php  
+<?php 
  require('db.php');
 ?>
 <!-- Navigation -->
@@ -21,6 +21,14 @@
       </li>
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+      </li>
+      <li class="nav-item">
+      <?php 
+           if(!isset($_SESSION["username"])) 
+           {
+       ?>
+        <a class="nav-link js-scroll-trigger" onclick="document.getElementById('id01').style.display='block'" >Login</a>
+        <?php } ?>
       </li>
     </ul>
   </div>

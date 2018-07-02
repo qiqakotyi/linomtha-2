@@ -1,5 +1,6 @@
 <?php
   include("auth.php"); 
+  error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>Linomtha</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,29 +28,28 @@
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
     <link href="css/creative.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/login-modal.css" />
 
   </head>
 
   <body id="page-top">
-
     <?php include 'nav.php' ?>
     <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>CONVENIENT SHOPPING EXPERINCE</strong>
+              <strong>GREAT MOBILE HIRE DEALS</strong>
             </h1>
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">Started planning your next event? That's great! because we have got every kind of mobile equipment you need to serve your purpose</p>
+            <p class="text-faded mb-5">Register to become an affiliate partner and profit from strong, flexible lean supply chain</p>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Reserve rental item Now!</a>
           </div>
         </div>
       </div>
     </header>
-
 
     <section class="bg-primary" id="about">
       <div class="container">
@@ -289,6 +289,41 @@
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
 
-  </body>
+<!-- Login Modal -->
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="" method="post" name="login">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input class="form-control" type="text" name="username" placeholder="Enter Username"  required />
+      <label for="psw"><b>Password</b></label>
+      <input class="form-control" type="password" name="password" placeholder="Enter Password" required />  
+      <button class="btn btn-primary" name="submit" type="submit">Login</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
 
 </html>

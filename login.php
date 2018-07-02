@@ -4,15 +4,11 @@
 <meta charset="utf-8">
 <title>Login</title>
 
-<link rel="stylesheet" href="CareRott_files/bootstrap.css" />
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/login.css" />
 </head>
 <body>
 <!-- Navigation -->
 <?php
 	require('db.php');
-	session_start();
 	
     if (isset($_POST['username'])){
 		
@@ -53,5 +49,6 @@
 		<p class="regsiter-link">Not registered yet? <a href='registration.php'>Register Here</a></p>
 </div>
 <?php } ?>
+
 </body>
 </html>

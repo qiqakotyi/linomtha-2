@@ -293,7 +293,8 @@ header.masthead p {
   font-weight: 700;
   text-transform: uppercase;
   border: none;
-  border-radius: 300px;
+  border-radius: 0;
+  padding: 10px;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
