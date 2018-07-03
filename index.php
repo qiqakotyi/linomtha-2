@@ -61,6 +61,7 @@
             <a class="btn btn-light btn-xl js-scroll-trigger" href="#contact=-section">Book Now</a>
             <?php if(!isset($_SESSION["username"])) {  ?>
 		        <a class="btn btn-light btn-xl js-scroll-trigger" onclick="document.getElementById('id01').style.display='block'">Login</a>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="registration.php">Register</a>
             <?php } else {?>
               <a class="btn btn-light btn-xl js-scroll-trigger" href="view.php">Profile</a>
               <a class="btn btn-light btn-xl js-scroll-trigger" href="logout.php">Logout</a>
