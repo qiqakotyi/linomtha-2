@@ -27,8 +27,12 @@
            if(!isset($_SESSION["username"])) 
            {
        ?>
-        <a class="nav-link js-scroll-trigger" onclick="document.getElementById('id01').style.display='block'" >Login</a>
-        <?php } ?>
+          <a class="nav-link js-scroll-trigger" onclick="document.getElementById('id01').style.display='block'" >Login</a>
+        <?php } 
+          else {
+        ?>
+             <a class="nav-link js-scroll-trigger" name="logout" id="logout" data-toggle="modal" href="logout.php">Logout</a>
+        <?php }?>
       </li>
     </ul>
   </div>

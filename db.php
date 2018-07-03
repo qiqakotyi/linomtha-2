@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect("localhost","root","","register");
+$con = mysqli_connect("localhost","root","","linomtha");
 error_reporting(0);
 // Check connection
 if (mysqli_connect_errno())

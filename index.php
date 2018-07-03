@@ -58,9 +58,9 @@
             <h2 class="section-heading text-white">INCREASE YOUR SUPPLIER VISIBILITY TODAY!</h2>
             <hr class="light my-4">
             <p class="text-faded mb-4">Join the leading hiring services marketplace,and realize an average increase in rental sales.</p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Book Now</a>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="#contact=-section">Book Now</a>
             <?php if(!isset($_SESSION["username"])) {  ?>
-		        <a class="btn btn-light btn-xl js-scroll-trigger" href="login.php">Login</a>
+		        <a class="btn btn-light btn-xl js-scroll-trigger" onclick="document.getElementById('id01').style.display='block'">Login</a>
             <?php } else {?>
               <a class="btn btn-light btn-xl js-scroll-trigger" href="view.php">Profile</a>
               <a class="btn btn-light btn-xl js-scroll-trigger" href="logout.php">Logout</a>
@@ -228,49 +228,38 @@
             <p class="mb-5">Please care to provide us with any feedback on how we can improve our services and customer support </p>
           </div>
         </div>
-        <!--<div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>123-456-6789</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
-            </p>
-          </div>
-        </div>
-      </div> -->
     </section>
-	 <header class="jumbotron hero-spacer">
+    <!-- Contac form -->
+    <?php include('form_process.php'); ?>
+	 <header class="jumbotron hero-spacer" id="contact-section">
             <h1> <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate="">
+                    <form name="sentMessage" id="contact" novalidate="" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input aria-invalid="false" class="form-control" placeholder="Your Name *" id="name" required="" data-validation-required-message="Please enter your name." type="text">
-                                    <p class="help-block text-danger"></p>
+                                    <input aria-invalid="false" class="form-control" value="<?= $name ?>" placeholder="Your Name *" id="name" name="name" required="" data-validation-required-message="Please enter your name." type="text">
+                                    <p class="help-block text-danger error"><?= $name_error ?></p>
                                 </div>
                                 <div class="form-group">
-                                    <input aria-invalid="false" class="form-control" placeholder="Your Email *" id="email" required="" data-validation-required-message="Please enter your email address." type="email">
-                                    <p class="help-block text-danger"></p>
+                                    <input aria-invalid="false" class="form-control" value="<?= $email ?>"  placeholder="Your Email *" id="email" name="email" required="" data-validation-required-message="Please enter your email address." type="email">
+                                    <p class="help-block text-danger error"><?= $email_error ?></p>
                                 </div>
                                 <div class="form-group">
-                                    <input aria-invalid="false" class="form-control" placeholder="Your Phone *" id="phone" required="" data-validation-required-message="Please enter your phone number." type="tel">
-                                    <p class="help-block text-danger"></p>
+                                    <input aria-invalid="false" class="form-control" value="<?= $phone ?>" placeholder="Your Phone *" id="phone" name="phone" required="" data-validation-required-message="Please enter your phone number." type="tel">
+                                    <p class="help-block text-danger error"><?= $phone_error ?></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea aria-invalid="false" class="form-control" placeholder="Leave comment *" id="message" required="" data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
+                                    <textarea aria-invalid="false" class="form-control" value="<?= $message ?>" placeholder="Leave comment *" id="message" required="" data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger error"></p>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-left">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
+                                <div id="success"><?= $success ?></div>
+                                <button class="btn btn-xl" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Send Message</button>
                             </div>
                         </div>
                     </form>
@@ -293,36 +282,27 @@
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="" method="post" name="login">
+  <form class="modal-content animate" id="loginModal" action="" method="post" name="login" >
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input class="form-control" type="text" name="username" placeholder="Enter Username"  required />
+      <input class="form-control" type="text" name="username"  id="username" placeholder="Enter Username"  required />
       <label for="psw"><b>Password</b></label>
-      <input class="form-control" type="password" name="password" placeholder="Enter Password" required />  
-      <button class="btn btn-primary" name="submit" type="submit">Login</button>
+      <input class="form-control" type="password" name="password"  id="password" placeholder="Enter Password" required />  
+      <button class="btn" type="button" name="login_button" id="login_button" >Login</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
+</div> 
+ 
+ <script src=js/login.js>  
+ </script>  
 
 </body>
 
