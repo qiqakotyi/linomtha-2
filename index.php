@@ -63,7 +63,7 @@
 		        <a class="btn btn-light btn-xl js-scroll-trigger" onclick="document.getElementById('id01').style.display='block'">Login</a>
             <a class="btn btn-light btn-xl js-scroll-trigger" onclick="document.getElementById('id02').style.display='block'">Register</a>
             <?php } else {?>
-              <a class="btn btn-light btn-xl js-scroll-trigger" href="view.php">Profile</a>
+              <!-- <a class="btn btn-light btn-xl js-scroll-trigger" href="view.php">Profile</a> -->
               <a class="btn btn-light btn-xl js-scroll-trigger" href="logout.php">Logout</a>
             <?php } ?>
           </div>
@@ -297,6 +297,8 @@
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    <p class="regsiter-link">Not registered yet? <a href="#" onclick="document.getElementById('id02').style.display='block';document.getElementById('id01').style.display='none'">Register Here</a></p>
+
     </div>
   </form>
 </div> 
@@ -326,6 +328,7 @@
     </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <p class="regsiter-link">Already have a user <a href="#" onclick="document.getElementById('id01').style.display='block';document.getElementById('id02').style.display='none'">Login Here</a></p>
     </div>
   </form>
 </div> 
