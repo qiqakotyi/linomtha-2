@@ -1,5 +1,5 @@
 <?php include('form-process.php'); ?>
-<link rel="stylesheet" href="css/conatct-form.css" type="text/css">
+<link rel="stylesheet" href="css/contact-form.css" type="text/css">
 <div class="container">  
   <form id="contact" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
     <h3>Contact</h3>

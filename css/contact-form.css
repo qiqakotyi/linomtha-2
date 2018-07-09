@@ -126,3 +126,7 @@ fieldset {
 :-ms-input-placeholder {
  color:#888;
 }
+
+.text-danger {
+	font-size: 14px !important; 
+  }

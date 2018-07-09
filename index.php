@@ -58,10 +58,10 @@
             <h2 class="section-heading text-white">INCREASE YOUR SUPPLIER VISIBILITY TODAY!</h2>
             <hr class="light my-4">
             <p class="text-faded mb-4">Join the leading hiring services marketplace,and realize an average increase in rental sales.</p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#contact=-section">Book Now</a>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="#contact">Book Now</a>
             <?php if(!isset($_SESSION["username"])) {  ?>
 		        <a class="btn btn-light btn-xl js-scroll-trigger" onclick="document.getElementById('id01').style.display='block'">Login</a>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="registration.php">Register</a>
+            <a class="btn btn-light btn-xl js-scroll-trigger" onclick="document.getElementById('id02').style.display='block'">Register</a>
             <?php } else {?>
               <a class="btn btn-light btn-xl js-scroll-trigger" href="view.php">Profile</a>
               <a class="btn btn-light btn-xl js-scroll-trigger" href="logout.php">Logout</a>
@@ -215,7 +215,7 @@
     <section class="bg-dark text-white">
       <div class="container text-center">
         <h2 class="mb-4">Stop waiting and start making your booking.</h2>
-        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Get Started</a>
+        <a class="btn btn-light btn-xl sr-button" href="#contact">Get Started</a>
       </div>
     </section>
 
@@ -226,7 +226,7 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Let's Get In Touch!</h2>
             <hr class="my-4">
-            <p class="mb-5">Please care to provide us with any feedback on how we can improve our services and customer support </p>
+            <p class="mb-5">Please fill in the contact form below to make you booking and we will get back to you</p>
           </div>
         </div>
     </section>
@@ -282,7 +282,6 @@
 <!-- Login Modal -->
 
 <div id="id01" class="modal">
-  
   <form class="modal-content animate" id="loginModal" action="" method="post" name="login" >
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -290,9 +289,9 @@
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input class="form-control" type="text" name="username"  id="username" placeholder="Enter Username"  required />
+      <input class="form-control" type="text" name="username"  id="username" placeholder="Username"  required />
       <label for="psw"><b>Password</b></label>
-      <input class="form-control" type="password" name="password"  id="password" placeholder="Enter Password" required />  
+      <input class="form-control" type="password" name="password"  id="password" placeholder="Password" required />  
       <button class="btn" type="button" name="login_button" id="login_button" >Login</button>
     </div>
 
@@ -301,10 +300,38 @@
     </div>
   </form>
 </div> 
- 
- <script src=js/login.js>  
- </script>  
 
+<!-- Resgister Modal -->
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" id="registerModal" action="" method="post" name="register" >
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+    <div class="container">
+    <div class="form-group">
+      <input class="form-control" type="text" name="username" id="reg-username" placeholder="Username"  required />
+      </div>
+      <div class="form-group">
+          <input class="form-control" type="email" id="reg-email" name="email" placeholder="Email" required />
+      </div>
+    <div class="form-group">
+        <input class="form-control" type="text" id="reg-age" name="age" placeholder="Age" required />
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="password"  id="reg-password"  name="password" placeholder="Password" required />
+    </div>
+      <button class="btn" type="button" name="register_button" id="register_button" >Register</button>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div> 
+ 
+ <script src=js/login.js></script>  
+ <script src=js/register.js></script>  
 </body>
 
 </html>
